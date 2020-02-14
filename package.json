@@ -1,0 +1,19 @@
+{
+  "name": "brain-games",
+  "version": "1.0.0",
+  "description": "first front-end project on Hexlet",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/siniiitsa/frontend-project-lvl1.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/siniiitsa/frontend-project-lvl1/issues"
+  },
+  "homepage": "https://github.com/siniiitsa/frontend-project-lvl1#readme"
+}
