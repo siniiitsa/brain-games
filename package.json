@@ -19,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/siniiitsa/frontend-project-lvl1/issues"
   },
-  "homepage": "https://github.com/siniiitsa/frontend-project-lvl1#readme"
+  "homepage": "https://github.com/siniiitsa/frontend-project-lvl1#readme",
+  "dependencies": {
+    "readline-sync": "^1.4.10"
+  }
 }
