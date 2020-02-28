@@ -7,3 +7,4 @@
 [asciinema for brain-even](https://asciinema.org/a/xhfuvMggQiBfUNYwRaVdCpQb5)
 [asciinema for brain-gcd](https://asciinema.org/a/5uHODBIok6g0yafvm00aGG64B)
 [asciinema for brain-progression](https://asciinema.org/a/5uHODBIok6g0yafvm00aGG64B)
+[asciinema for brain-prime](https://asciinema.org/a/nRKIVfg2NQDVwLVZ5nebGjLi5)
