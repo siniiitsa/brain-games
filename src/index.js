@@ -1,12 +1,12 @@
 import readlineSync from 'readline-sync';
 
 const { log } = console;
-const { question: ask } = readlineSync;
+const { question: askUser } = readlineSync;
 
-const getUserName = () => ask('May I have your name? ');
+const getUserName = () => askUser('May I have your name? ');
 
 const createGame = ({
-  rounds = 3,
+  roundsCount = 3,
   rulesMessage,
   getCorrectAnswer,
   getQuestion,
@@ -18,11 +18,10 @@ const createGame = ({
   log(rulesMessage);
 
   // game part
-  let userWin = true;
-  // eslint-disable-next-line no-restricted-syntax
-  for (let round = 1; round <= rounds; round += 1) {
+  let isUserWinner = true;
+  for (let roundNum = 1; roundNum <= roundsCount; roundNum += 1) {
     const question = getQuestion();
-    const userAnswer = ask(`Question: ${question} `);
+    const userAnswer = askUser(`Question: ${question} `);
     const correctAnswer = getCorrectAnswer(question);
 
     if (userAnswer === correctAnswer) {
@@ -30,12 +29,12 @@ const createGame = ({
     } else {
       log(`"${userAnswer}" is a wrong answer ;(. Correct answer was "${correctAnswer}".`);
       log(`Let's try again, ${userName}!`);
-      userWin = false;
+      isUserWinner = false;
       break;
     }
   }
 
-  if (userWin) {
+  if (isUserWinner) {
     log(`Congratulations, ${userName}!`);
   }
 };

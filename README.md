@@ -6,8 +6,8 @@
 
 #### Asciinemas
 
-- [brain-even asciinema](https://asciinema.org/a/AlkRtONSLF3OUbsGhmuGF2cLN)
-- [brain-gcd asciinema](https://asciinema.org/a/5uHODBIok6g0yafvm00aGG64B)
-- [brain-progression asciinema](https://asciinema.org/a/crelLbtjfksUY4OiDOffpSYqW)
-- [brain-prime asciinema](https://asciinema.org/a/kyi1aAyin4E4BXiwEiuCzEgEO)
-- [brain-calc asciinema](https://asciinema.org/a/33j81PdOnrbfj634rwcCxbIvT)
+- [brain-even](https://asciinema.org/a/AlkRtONSLF3OUbsGhmuGF2cLN)
+- [brain-gcd](https://asciinema.org/a/5uHODBIok6g0yafvm00aGG64B)
+- [brain-progression](https://asciinema.org/a/crelLbtjfksUY4OiDOffpSYqW)
+- [brain-prime](https://asciinema.org/a/kyi1aAyin4E4BXiwEiuCzEgEO)
+- [brain-calc](https://asciinema.org/a/33j81PdOnrbfj634rwcCxbIvT)
