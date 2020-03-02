@@ -1,17 +1,15 @@
 import createGame from '../index.js';
+import { getRandomInt, stringToNum } from '../helpers.js';
+
 
 const rulesMessage = 'What number is missing in the progression?';
-
-const getRandomInt = (min, max) => (
-  Math.floor(min + Math.random() * (max + 1 - min))
-);
-
-const stringToNumber = (string) => Number(string) || string;
 
 const step = getRandomInt(1, 10);
 
 const getProgression = (length = 10) => {
-  const startNum = getRandomInt(1, 10);
+  const min = 1;
+  const max = 10;
+  const startNum = getRandomInt(min, max);
   let newNum = startNum;
 
   const progression = new Array(length)
@@ -31,10 +29,12 @@ const getProgression = (length = 10) => {
   return progression.join(' ');
 };
 
+const getQuestion = getProgression;
+
 const getCorrectAnswer = (progression) => {
   const numbers = progression
     .split(' ')
-    .map(stringToNumber);
+    .map(stringToNum);
 
   const missingNumIndex = numbers.indexOf('..');
   const prev = numbers[missingNumIndex - 1];
@@ -42,11 +42,10 @@ const getCorrectAnswer = (progression) => {
   return String(prev + step);
 };
 
-
 const playBrainProgression = createGame({
   rulesMessage,
   getCorrectAnswer,
-  getQuestion: getProgression,
+  getQuestion,
 });
 
 export default playBrainProgression;
