@@ -1,13 +1,20 @@
 import createGame from '../index.js';
+import { getRandomInt, stringToNum } from '../helpers.js';
 
 const rulesMessage = 'Find the greatest common divisor of given numbers.';
 
-const getRandomInteger = (limit = 100) => Math.floor(Math.random() * limit) + 1;
-const getQuestion = () => `${getRandomInteger()} ${getRandomInteger()}`;
-const stringsToNumbers = (string) => Number(string) || string;
-const getGcd = (a, b) => (!b ? a : getGcd(b, a % b));
+const getGcd = (num1, num2) => (
+  !num2 ? num1 : getGcd(num2, num1 % num2)
+);
+
+const getQuestion = () => {
+  const min = 1;
+  const max = 100;
+  return `${getRandomInt(min, max)} ${getRandomInt(min, max)}`;
+};
+
 const getCorrectAnswer = (question) => {
-  const [a, b] = question.split(' ').map(stringsToNumbers);
+  const [a, b] = question.split(' ').map(stringToNum);
   return String(getGcd(a, b));
 };
 
