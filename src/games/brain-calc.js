@@ -1,12 +1,24 @@
 import createGame from '../index.js';
+import { getRandomInt, stringToNum, getRandomArrayElem } from '../helpers.js';
 
 const rulesMessage = 'What is the result of the expression?';
 
-const getRandomInteger = (limit = 100) => Math.floor(Math.random() * limit) + 1;
-const getRandomArrayElement = (array) => array[getRandomInteger(array.length) - 1];
-const stringsToNumbers = (string) => Number(string) || string;
+const getMathExpression = () => {
+  const operations = ['+', '-', '*'];
+  const min = 1;
+  const max = 100;
+
+  return [
+    getRandomInt(min, max),
+    getRandomArrayElem(operations),
+    getRandomInt(min, max),
+  ].join(' ');
+};
+
+const getQuestion = getMathExpression;
+
 const getCorrectAnswer = (question) => {
-  const [num1, operation, num2] = question.split(' ').map(stringsToNumbers);
+  const [num1, operation, num2] = question.split(' ').map(stringToNum);
 
   switch (operation) {
     case '+': return String(num1 + num2);
@@ -15,19 +27,11 @@ const getCorrectAnswer = (question) => {
     default: return null;
   }
 };
-const getMathExpression = () => {
-  const operations = ['+', '-', '*'];
-  return [
-    getRandomInteger(),
-    getRandomArrayElement(operations),
-    getRandomInteger(),
-  ].join(' ');
-};
 
 const playBrainCalc = createGame({
   rulesMessage,
   getCorrectAnswer,
-  getQuestion: getMathExpression,
+  getQuestion,
 });
 
 export default playBrainCalc;
