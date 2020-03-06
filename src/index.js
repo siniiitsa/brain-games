@@ -3,8 +3,6 @@ import readlineSync from 'readline-sync';
 const { log } = console;
 const { question: askUser } = readlineSync;
 
-const getUserName = () => askUser('May I have your name? ');
-
 const createGame = ({
   roundsCount = 3,
   rulesMessage,
@@ -13,7 +11,7 @@ const createGame = ({
 }) => () => {
   // greeting part
   log('Welcome to the Brain Games!');
-  const userName = getUserName();
+  const userName = askUser('May I have your name? ');
   log(`Hello, ${userName}`);
   log(rulesMessage);
 
