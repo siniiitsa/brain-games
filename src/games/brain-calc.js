@@ -3,17 +3,16 @@ import { getRandomInt } from '../helpers.js';
 
 const rulesMessage = 'What is the result of the expression?';
 
-const math = {
-  operations: {
-    add: { sign: '+', perform: (a, b) => a + b },
-    subtract: { sign: '-', perform: (a, b) => a - b },
-    multiply: { sign: '*', perform: (a, b) => a * b },
-  },
-  getRandomOperation() {
-    const operations = Object.values(this.operations);
-    return operations[getRandomInt(0, operations.length - 1)];
-  },
+const getRandomArrayElem = (array) => {
+  const randIndex = getRandomInt(0, array.length - 1);
+  return array[randIndex];
 };
+
+const operations = [
+  { sign: '+', perform: (a, b) => a + b },
+  { sign: '-', perform: (a, b) => a - b },
+  { sign: '*', perform: (a, b) => a * b },
+];
 
 const getQuestionData = () => {
   const min = 1;
@@ -21,7 +20,7 @@ const getQuestionData = () => {
 
   const num1 = getRandomInt(min, max);
   const num2 = getRandomInt(min, max);
-  const { sign, perform } = math.getRandomOperation();
+  const { sign, perform } = getRandomArrayElem(operations);
 
   return {
     question: `${num1} ${sign} ${num2}`,

@@ -1,51 +1,32 @@
 import createGame from '../index.js';
-import { getRandomInt, stringToNum } from '../helpers.js';
-
+import { getRandomInt } from '../helpers.js';
 
 const rulesMessage = 'What number is missing in the progression?';
 
-const step = getRandomInt(1, 10);
+const calcProgressionNum = (startNum, diff, index) => startNum + diff * index;
 
-const getProgression = (length = 10) => {
-  const min = 1;
-  const max = 10;
-  const startNum = getRandomInt(min, max);
-  let newNum = startNum;
+const getQuestionData = (progressionLength = 10) => {
+  const startNum = getRandomInt(1, 10);
+  const diff = getRandomInt(1, 10);
 
-  const progression = new Array(length)
-    .fill(startNum)
-    .map((num, index) => {
-      if (index === 0) {
-        return num;
-      }
+  const progression = [startNum];
+  for (let i = 1; i < progressionLength; i += 1) {
+    const nextNum = calcProgressionNum(startNum, diff, i);
+    progression.push(nextNum);
+  }
 
-      newNum += step;
-      return newNum;
-    });
-
-  const missingNumIndex = getRandomInt(1, length - 2);
+  const missingNumIndex = getRandomInt(1, progressionLength - 2);
   progression[missingNumIndex] = '..';
 
-  return progression.join(' ');
-};
-
-const getQuestion = getProgression;
-
-const getCorrectAnswer = (progression) => {
-  const numbers = progression
-    .split(' ')
-    .map(stringToNum);
-
-  const missingNumIndex = numbers.indexOf('..');
-  const prev = numbers[missingNumIndex - 1];
-
-  return String(prev + step);
+  return {
+    question: progression.join(' '),
+    answer: String(calcProgressionNum(startNum, diff, missingNumIndex)),
+  };
 };
 
 const playBrainProgression = createGame({
   rulesMessage,
-  getCorrectAnswer,
-  getQuestion,
+  getQuestionData,
 });
 
 export default playBrainProgression;
