@@ -6,8 +6,7 @@ const { question: askUser } = readlineSync;
 const createGame = ({
   roundsCount = 3,
   rulesMessage,
-  getCorrectAnswer,
-  getQuestion,
+  getQuestionData,
 }) => () => {
   // greeting part
   log('Welcome to the Brain Games!');
@@ -17,12 +16,11 @@ const createGame = ({
 
   // game part
   for (let roundNum = 1; roundNum <= roundsCount; roundNum += 1) {
-    const question = getQuestion();
+    const { question, answer } = getQuestionData();
     const userAnswer = askUser(`Question: ${question} `);
-    const correctAnswer = getCorrectAnswer(question);
 
-    if (userAnswer !== correctAnswer) {
-      log(`"${userAnswer}" is a wrong answer ;(. Correct answer was "${correctAnswer}".`);
+    if (userAnswer !== answer) {
+      log(`"${userAnswer}" is a wrong answer ;(. Correct answer was "${answer}".`);
       log(`Let's try again, ${userName}!`);
       return;
     }
