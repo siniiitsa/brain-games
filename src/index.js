@@ -16,25 +16,21 @@ const createGame = ({
   log(rulesMessage);
 
   // game part
-  let isUserWinner = true;
   for (let roundNum = 1; roundNum <= roundsCount; roundNum += 1) {
     const question = getQuestion();
     const userAnswer = askUser(`Question: ${question} `);
     const correctAnswer = getCorrectAnswer(question);
 
-    if (userAnswer === correctAnswer) {
-      log('Correct!');
-    } else {
+    if (userAnswer !== correctAnswer) {
       log(`"${userAnswer}" is a wrong answer ;(. Correct answer was "${correctAnswer}".`);
       log(`Let's try again, ${userName}!`);
-      isUserWinner = false;
-      break;
+      return;
     }
+
+    log('Correct!');
   }
 
-  if (isUserWinner) {
-    log(`Congratulations, ${userName}!`);
-  }
+  log(`Congratulations, ${userName}!`);
 };
 
 export default createGame;
