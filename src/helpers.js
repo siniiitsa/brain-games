@@ -3,7 +3,3 @@ export const getRandomInt = (min, max) => (
 );
 
 export const stringToNum = (string) => Number(string) || string;
-
-export const getRandomArrayElem = (array) => (
-  array[getRandomInt(0, array.length - 1)]
-);

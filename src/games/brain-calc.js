@@ -1,7 +1,11 @@
 import createGame from '../index.js';
-import { getRandomInt, stringToNum, getRandomArrayElem } from '../helpers.js';
+import { getRandomInt, stringToNum } from '../helpers.js';
 
 const rulesMessage = 'What is the result of the expression?';
+
+export const getRandomArrayElem = (array) => (
+  array[getRandomInt(0, array.length - 1)]
+);
 
 const getMathExpression = () => {
   const operations = ['+', '-', '*'];
