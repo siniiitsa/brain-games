@@ -1,41 +1,37 @@
 import createGame from '../index.js';
-import { getRandomInt, stringToNum } from '../helpers.js';
+import { getRandomInt } from '../helpers.js';
 
 const rulesMessage = 'What is the result of the expression?';
 
-export const getRandomArrayElem = (array) => (
-  array[getRandomInt(0, array.length - 1)]
-);
+const math = {
+  operations: {
+    add: { sign: '+', perform: (a, b) => a + b },
+    subtract: { sign: '-', perform: (a, b) => a - b },
+    multiply: { sign: '*', perform: (a, b) => a * b },
+  },
+  getRandomOperation() {
+    const operations = Object.values(this.operations);
+    return operations[getRandomInt(0, operations.length - 1)];
+  },
+};
 
-const getMathExpression = () => {
-  const operations = ['+', '-', '*'];
+const getQuestionData = () => {
   const min = 1;
   const max = 100;
 
-  return [
-    getRandomInt(min, max),
-    getRandomArrayElem(operations),
-    getRandomInt(min, max),
-  ].join(' ');
-};
+  const num1 = getRandomInt(min, max);
+  const num2 = getRandomInt(min, max);
+  const { sign, perform } = math.getRandomOperation();
 
-const getQuestion = getMathExpression;
-
-const getCorrectAnswer = (question) => {
-  const [num1, operation, num2] = question.split(' ').map(stringToNum);
-
-  switch (operation) {
-    case '+': return String(num1 + num2);
-    case '-': return String(num1 - num2);
-    case '*': return String(num1 * num2);
-    default: return null;
-  }
+  return {
+    question: `${num1} ${sign} ${num2}`,
+    answer: String(perform(num1, num2)),
+  };
 };
 
 const playBrainCalc = createGame({
   rulesMessage,
-  getCorrectAnswer,
-  getQuestion,
+  getQuestionData,
 });
 
 export default playBrainCalc;
