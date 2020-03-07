@@ -3,10 +3,8 @@ import { getRandomInt } from '../helpers.js';
 
 const rulesMessage = 'What is the result of the expression?';
 
-const getRandomArrayElem = (array) => {
-  const randIndex = getRandomInt(0, array.length - 1);
-  return array[randIndex];
-};
+const minNum = 1;
+const maxNum = 100;
 
 const operations = [
   { sign: '+', perform: (a, b) => a + b },
@@ -14,13 +12,14 @@ const operations = [
   { sign: '*', perform: (a, b) => a * b },
 ];
 
-const getQuestionData = () => {
-  const min = 1;
-  const max = 100;
+const getRandomOperation = () => (
+  operations[getRandomInt(0, operations.length - 1)]
+);
 
-  const num1 = getRandomInt(min, max);
-  const num2 = getRandomInt(min, max);
-  const { sign, perform } = getRandomArrayElem(operations);
+const getQuestionData = () => {
+  const num1 = getRandomInt(minNum, maxNum);
+  const num2 = getRandomInt(minNum, maxNum);
+  const { sign, perform } = getRandomOperation(operations);
 
   return {
     question: `${num1} ${sign} ${num2}`,
