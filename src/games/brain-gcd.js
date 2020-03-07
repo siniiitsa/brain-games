@@ -3,16 +3,16 @@ import { getRandomInt } from '../helpers.js';
 
 const rulesMessage = 'Find the greatest common divisor of given numbers.';
 
+const minNum = 1;
+const maxNum = 100;
+
 const getGcd = (num1, num2) => (
   !num2 ? num1 : getGcd(num2, num1 % num2)
 );
 
 const getQuestionData = () => {
-  const min = 1;
-  const max = 100;
-
-  const num1 = getRandomInt(min, max);
-  const num2 = getRandomInt(min, max);
+  const num1 = getRandomInt(minNum, maxNum);
+  const num2 = getRandomInt(minNum, maxNum);
 
   return {
     question: `${num1} ${num2}`,
