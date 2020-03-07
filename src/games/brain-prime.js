@@ -3,6 +3,9 @@ import { getRandomInt } from '../helpers.js';
 
 const rulesMessage = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
+const minNum = 1;
+const maxNum = 100;
+
 const isPrime = (num) => {
   if (num < 1) return false;
 
@@ -14,10 +17,7 @@ const isPrime = (num) => {
 };
 
 const getQuestionData = () => {
-  const min = 1;
-  const max = 100;
-
-  const num = getRandomInt(min, max);
+  const num = getRandomInt(minNum, maxNum);
   return {
     question: String(num),
     answer: isPrime(num) ? 'yes' : 'no',
