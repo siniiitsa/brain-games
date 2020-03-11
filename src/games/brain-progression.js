@@ -1,11 +1,11 @@
 import createGame from '../index.js';
 import { getRandomInt } from '../helpers.js';
 
-const rulesMessage = 'What number is missing in the progression?';
+const rules = 'What number is missing in the progression?';
 
 const calcProgressionNum = (startNum, diff, index) => startNum + diff * index;
 
-const getQuestionData = (progressionLength = 10) => {
+const getGameData = (progressionLength = 10) => {
   const startNum = getRandomInt(1, 10);
   const diff = getRandomInt(1, 10);
 
@@ -25,8 +25,8 @@ const getQuestionData = (progressionLength = 10) => {
 };
 
 const playBrainProgression = createGame({
-  rulesMessage,
-  getQuestionData,
+  rules,
+  getGameData,
 });
 
 export default playBrainProgression;

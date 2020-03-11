@@ -1,7 +1,7 @@
 import createGame from '../index.js';
 import { getRandomInt } from '../helpers.js';
 
-const rulesMessage = 'What is the result of the expression?';
+const rules = 'What is the result of the expression?';
 
 const minNum = 1;
 const maxNum = 100;
@@ -16,7 +16,7 @@ const getRandomOperation = () => (
   operations[getRandomInt(0, operations.length - 1)]
 );
 
-const getQuestionData = () => {
+const getGameData = () => {
   const num1 = getRandomInt(minNum, maxNum);
   const num2 = getRandomInt(minNum, maxNum);
   const { sign, perform } = getRandomOperation(operations);
@@ -28,8 +28,8 @@ const getQuestionData = () => {
 };
 
 const playBrainCalc = createGame({
-  rulesMessage,
-  getQuestionData,
+  rules,
+  getGameData,
 });
 
 export default playBrainCalc;

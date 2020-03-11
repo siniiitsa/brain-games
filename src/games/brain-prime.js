@@ -1,7 +1,7 @@
 import createGame from '../index.js';
 import { getRandomInt } from '../helpers.js';
 
-const rulesMessage = 'Answer "yes" if given number is prime. Otherwise answer "no".';
+const rules = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
 const minNum = 1;
 const maxNum = 100;
@@ -16,7 +16,7 @@ const isPrime = (num) => {
   return true;
 };
 
-const getQuestionData = () => {
+const getGameData = () => {
   const num = getRandomInt(minNum, maxNum);
   return {
     question: String(num),
@@ -25,8 +25,8 @@ const getQuestionData = () => {
 };
 
 const playBrainPrime = createGame({
-  rulesMessage,
-  getQuestionData,
+  rules,
+  getGameData,
 });
 
 export default playBrainPrime;
