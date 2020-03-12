@@ -1,4 +1,3 @@
-import createGame from '../index.js';
 import { getRandomInt } from '../helpers.js';
 
 const rules = 'What is the result of the expression?';
@@ -27,9 +26,7 @@ const getGameData = () => {
   };
 };
 
-const playBrainCalc = createGame({
+export default {
   rules,
   getGameData,
-});
-
-export default playBrainCalc;
+};

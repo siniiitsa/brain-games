@@ -1,4 +1,3 @@
-import createGame from '../index.js';
 import { getRandomInt } from '../helpers.js';
 
 const rules = 'Find the greatest common divisor of given numbers.';
@@ -20,9 +19,7 @@ const getGameData = () => {
   };
 };
 
-const playBrainCgd = createGame({
+export default {
   rules,
   getGameData,
-});
-
-export default playBrainCgd;
+};

@@ -1,4 +1,3 @@
-import createGame from '../index.js';
 import { getRandomInt } from '../helpers.js';
 
 const rules = 'Answer "yes" if the number is even, otherwise answer "no".';
@@ -16,9 +15,7 @@ const getGameData = () => {
   };
 };
 
-const playBrainEven = createGame({
+export default {
   rules,
   getGameData,
-});
-
-export default playBrainEven;
+};

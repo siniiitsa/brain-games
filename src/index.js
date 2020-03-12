@@ -3,10 +3,7 @@ import readlineSync from 'readline-sync';
 const { log } = console;
 const { question: askUser } = readlineSync;
 
-const createGame = ({
-  rules,
-  getGameData,
-}) => () => {
+const play = ({ rules, getGameData }) => {
   const roundsCount = 3;
 
   // greeting part
@@ -32,4 +29,4 @@ const createGame = ({
   log(`Congratulations, ${userName}!`);
 };
 
-export default createGame;
+export default play;

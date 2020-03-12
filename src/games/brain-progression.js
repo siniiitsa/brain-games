@@ -1,4 +1,3 @@
-import createGame from '../index.js';
 import { getRandomInt } from '../helpers.js';
 
 const rules = 'What number is missing in the progression?';
@@ -25,9 +24,7 @@ const getGameData = () => {
   };
 };
 
-const playBrainProgression = createGame({
+export default {
   rules,
   getGameData,
-});
-
-export default playBrainProgression;
+};
