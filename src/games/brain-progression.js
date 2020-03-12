@@ -5,13 +5,14 @@ const rules = 'What number is missing in the progression?';
 
 const calcProgressionNum = (startNum, diff, index) => startNum + diff * index;
 
-const getGameData = (progressionLength = 10) => {
+const getGameData = () => {
+  const progressionLength = 10;
   const startNum = getRandomInt(1, 10);
   const diff = getRandomInt(1, 10);
 
-  const progression = [startNum];
-  for (let i = 1; i < progressionLength; i += 1) {
-    const nextNum = calcProgressionNum(startNum, diff, i);
+  const progression = [];
+  for (let i = 0; i < progressionLength; i += 1) {
+    const nextNum = i === 0 ? startNum : calcProgressionNum(startNum, diff, i);
     progression.push(nextNum);
   }
 
