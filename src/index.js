@@ -3,14 +3,14 @@ import readlineSync from 'readline-sync';
 const { log } = console;
 const { question: askUser } = readlineSync;
 
-const play = ({ rules, getGameData }) => {
+const play = ({ description, getGameData }) => {
   const roundsCount = 3;
 
   // greeting part
   log('Welcome to the Brain Games!');
   const userName = askUser('May I have your name? ');
   log(`Hello, ${userName}`);
-  log(rules);
+  log(description);
 
   // game part
   for (let i = 1; i <= roundsCount; i += 1) {

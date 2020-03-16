@@ -1,6 +1,6 @@
 import { getRandomInt } from '../helpers.js';
 
-const rules = 'Find the greatest common divisor of given numbers.';
+const description = 'Find the greatest common divisor of given numbers.';
 
 const minNum = 1;
 const maxNum = 100;
@@ -20,6 +20,6 @@ const getGameData = () => {
 };
 
 export default {
-  rules,
+  description,
   getGameData,
 };

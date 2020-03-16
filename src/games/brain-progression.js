@@ -1,6 +1,6 @@
 import { getRandomInt } from '../helpers.js';
 
-const rules = 'What number is missing in the progression?';
+const description = 'What number is missing in the progression?';
 
 const calcProgressionNum = (startNum, diff, index) => startNum + diff * index;
 
@@ -25,6 +25,6 @@ const getGameData = () => {
 };
 
 export default {
-  rules,
+  description,
   getGameData,
 };

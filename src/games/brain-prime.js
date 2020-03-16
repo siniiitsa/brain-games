@@ -1,6 +1,6 @@
 import { getRandomInt } from '../helpers.js';
 
-const rules = 'Answer "yes" if given number is prime. Otherwise answer "no".';
+const description = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
 const minNum = 1;
 const maxNum = 100;
@@ -24,6 +24,6 @@ const getGameData = () => {
 };
 
 export default {
-  rules,
+  description,
   getGameData,
 };

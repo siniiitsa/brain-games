@@ -1,6 +1,6 @@
 import { getRandomInt } from '../helpers.js';
 
-const rules = 'What is the result of the expression?';
+const description = 'What is the result of the expression?';
 
 const minNum = 1;
 const maxNum = 100;
@@ -27,6 +27,6 @@ const getGameData = () => {
 };
 
 export default {
-  rules,
+  description,
   getGameData,
 };

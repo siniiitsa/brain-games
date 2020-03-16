@@ -1,6 +1,6 @@
 import { getRandomInt } from '../helpers.js';
 
-const rules = 'Answer "yes" if the number is even, otherwise answer "no".';
+const description = 'Answer "yes" if the number is even, otherwise answer "no".';
 
 const minNum = 1;
 const maxNum = 100;
@@ -16,6 +16,6 @@ const getGameData = () => {
 };
 
 export default {
-  rules,
+  description,
   getGameData,
 };
