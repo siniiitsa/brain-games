@@ -7,8 +7,8 @@ A set of cli mini games in a form of an npm module.
 
 ## Description and demos
 
-- Brain-even: guess if the number is even or not - [demo](https://asciinema.org/a/AlkRtONSLF3OUbsGhmuGF2cLN)
-- Find the greatest common divisor of 2 given numbers - [demo](https://asciinema.org/a/5uHODBIok6g0yafvm00aGG64B)
-- Find the missing element of a random arithmetic progression - [demo](https://asciinema.org/a/crelLbtjfksUY4OiDOffpSYqW)
-- Guess if the given number is prime or not - [demo](https://asciinema.org/a/kyi1aAyin4E4BXiwEiuCzEgEO)
-- Find a result of a given random math operation with 2 numbers - [demo](https://asciinema.org/a/33j81PdOnrbfj634rwcCxbIvT)
+- [Brain-even](https://asciinema.org/a/AlkRtONSLF3OUbsGhmuGF2cLN) - Guess if the number is even or not
+- [Brain-gcd](https://asciinema.org/a/5uHODBIok6g0yafvm00aGG64B) - Find the greatest common divisor of 2 given numbers
+- [Brain-progression](https://asciinema.org/a/crelLbtjfksUY4OiDOffpSYqW) - Find the missing element of a random arithmetic progression
+- [Brain-prime](https://asciinema.org/a/kyi1aAyin4E4BXiwEiuCzEgEO) - Guess if the given number is prime or not
+- [Brain-calc](https://asciinema.org/a/33j81PdOnrbfj634rwcCxbIvT) - Find a result of a given random math operation with 2 numbers
