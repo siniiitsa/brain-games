@@ -7,8 +7,21 @@ A set of cli mini games in a form of an npm module.
 
 ## Description and demos
 
-- [Brain-even](https://asciinema.org/a/AlkRtONSLF3OUbsGhmuGF2cLN) - Guess if the number is even or not
-- [Brain-gcd](https://asciinema.org/a/5uHODBIok6g0yafvm00aGG64B) - Find the greatest common divisor of 2 given numbers
-- [Brain-progression](https://asciinema.org/a/crelLbtjfksUY4OiDOffpSYqW) - Find the missing element of a random arithmetic progression
-- [Brain-prime](https://asciinema.org/a/kyi1aAyin4E4BXiwEiuCzEgEO) - Guess if the given number is prime or not
-- [Brain-calc](https://asciinema.org/a/33j81PdOnrbfj634rwcCxbIvT) - Find a result of a given random math operation with 2 numbers
+Every game is a simple 3-round process, giving questions and accepting user answers
+
+- [Brain-even](https://asciinema.org/a/AlkRtONSLF3OUbsGhmuGF2cLN) - guess if the number is even or not
+- [Brain-gcd](https://asciinema.org/a/5uHODBIok6g0yafvm00aGG64B) - find the greatest common divisor of 2 given numbers
+- [Brain-progression](https://asciinema.org/a/crelLbtjfksUY4OiDOffpSYqW) - find the missing element of a random arithmetic progression
+- [Brain-prime](https://asciinema.org/a/kyi1aAyin4E4BXiwEiuCzEgEO) - guess if the given number is prime or not
+- [Brain-calc](https://asciinema.org/a/33j81PdOnrbfj634rwcCxbIvT) - find a result of a given random math operation with 2 numbers
+
+## How to install and use
+
+1. Download or clone this repository
+2. Open a terminal window in the project folder and run:
+
+```
+~ npm link
+```
+
+This will install the game set as a global npm module and you will be able to launch each game from anywhere in the terminal window.
