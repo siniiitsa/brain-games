@@ -21,7 +21,14 @@ Every game is a simple 3-round process, giving questions and accepting user answ
 2. Open a terminal window in the project folder and run:
 
 ```
-~ npm link
+npm link
 ```
 
 This will install the game set as a global npm module and you will be able to launch each game from anywhere in the terminal window.
+To lauch any game, just execute the game name as a command in your terminal. Like this:
+
+```
+brain-even
+```
+
+Happy playing!
